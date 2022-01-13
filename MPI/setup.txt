@@ -8,4 +8,4 @@ mpirun ./<filename>
 mpirun -np 5 ./<filename>
 
 //if mpirun is not working, add the flag
-mpirun --allow-run-as-root ./test
+mpirun --allow-run-as-root ./<filename>
