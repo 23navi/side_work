@@ -1,0 +1,16 @@
+#!/bin/bash 
+DATE= $(date +%m-%d-%Y)
+BACKUP_DIR ="~/Desktop/dailybackup"
+
+tar -cvzf $BACKUP_DIR/backup-$DATE.tar.gz ~/Desktop
+
+
+#save the script in ~/Desktop/bin as dailybackup and add bin to 
+# $PATH and give the  script ext permission
+
+# create the backup of Desktop every midnight and save the backup 
+# .tar.gz file in ~/Desktop/dailybackup with date in name
+# eg: backup-01-01-2022.tar.gz
+
+# crete a crontab job
+# 0 0 * * * ~/Desktop/bin/dailybackup
