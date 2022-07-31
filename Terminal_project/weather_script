@@ -1,0 +1,23 @@
+#!/bin/bash
+
+case $1 in
+-h | --help)
+	echo "WELCOME TO WEATHER APP USING BASH SCRIPT - BY : Navi Sureka"
+	echo "Use -l followed by city name to get 3 day weather of that location"
+	;;
+-3)
+	echo "YOU PROVIDED -3"
+	curl "wttr.in"
+	;;
+-l | --location)
+	curl "wttr.in/$2"
+	;; 
+*)
+	curl "wttr.in?m1"
+	;;
+esac
+
+
+#save script in ~/bin and then add the ~/bin to $PATH and give exe permission to the script 
+
+
