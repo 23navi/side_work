@@ -23,9 +23,9 @@ mongoose.connection.on("reconnected", () => {
   console.log("Reconnected after failure");
 });
 
-mongoose.connection.on("error", (err) => {
-  console.log({ err });
-});
+mongoose.connection.on("error",(err)=>{
+console.log({err})
+})
 export async function disconnectFromDb() {
   await mongoose.connection.close();
   logger.info("Disconnect from db");
