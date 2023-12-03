@@ -1,4 +1,4 @@
-// Have "experimentalDecorators": true and  "strictPropertyInitialization": false in tsconfig
+// Have "experimentalDecorators": true ,  "emitDecoratorMetadata": true  and  "strictPropertyInitialization": false in tsconfig
 
 import { getModelForClass, prop, pre } from "@typegoose/typegoose";
 import argon2 from "argon2";
