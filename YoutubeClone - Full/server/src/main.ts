@@ -1,10 +1,22 @@
 import express from "express";
+import cookieParser from "cookie-parser";
+import helmet from "helmet";
+import cors from "cors";
 import { connectToDb, disconnectFromDb } from "./utils/database";
 import logger from "./utils/logger";
+import { CORS_ORIGIN } from "./constants";
 
 const app = express();
+app.use(cookieParser());
+app.use(express.json());
+app.use(
+  cors({
+    origin: CORS_ORIGIN,
+  })
+);
+app.use(helmet());
 
-const server = app.listen(3000, async () => {
+const server = app.listen(3001, async () => {
   await connectToDb();
   logger.info("Listening on port 3000");
 });
