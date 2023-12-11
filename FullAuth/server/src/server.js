@@ -1,3 +1,4 @@
+require("dotenv").config(); // Env from .env will be available to all the modules
 const express = require("express");
 const app = express();
 
