@@ -5,6 +5,7 @@ import cors from "cors";
 import { connectToDb, disconnectFromDb } from "./utils/database";
 import logger from "./utils/logger";
 import { CORS_ORIGIN } from "./constants";
+import userRouter from "./modules/users/user.route";
 
 const app = express();
 app.use(cookieParser());
@@ -16,9 +17,15 @@ app.use(
 );
 app.use(helmet());
 
+app.use("/api/users", userRouter);
+
+app.get("/", (req, res) => {
+  res.send("Up and running");
+});
+
 const server = app.listen(3001, async () => {
   await connectToDb();
-  logger.info("Listening on port 3000");
+  logger.info("Listening on port 3001");
 });
 
 const signals = ["SIGTERM", "SIGINT"];

@@ -2,8 +2,7 @@ import mongoose from "mongoose";
 import logger from "./logger";
 
 const DB_CONNECTION_STRING =
-  process.env.DB_CONNECTION_STRING ||
-  "mongodb+srv://Navi2308:Navi2308@cluster0.nxyil8p.mongodb.net/?retryWrites=true&w=majority";
+  process.env.DB_CONNECTION_STRING || "mongodb://localhost:27017/yt-clone";
 
 export async function connectToDb() {
   try {
@@ -23,9 +22,9 @@ mongoose.connection.on("reconnected", () => {
   console.log("Reconnected after failure");
 });
 
-mongoose.connection.on("error",(err)=>{
-console.log({err})
-})
+mongoose.connection.on("error", (err) => {
+  console.log({ err });
+});
 export async function disconnectFromDb() {
   await mongoose.connection.close();
   logger.info("Disconnect from db");
