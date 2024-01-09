@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { registerUserHandler } from "./user.controller";
-import { processRequestBody } from "zod-express-middleware";
-import { createUserSchema } from "./user.schema";
+import validateResource from "../../middlewares/validateResources";
+import { CreateUserBody, createUserSchema } from "./user.schema";
 
 const router = Router();
 
@@ -9,9 +9,5 @@ router.get("/", (req, res) => {
   res.send("Get me route");
 });
 
-router.post(
-  "/",
-  processRequestBody(createUserSchema.body),
-  registerUserHandler
-);
+router.post("/", validateResource(createUserSchema), registerUserHandler);
 export default router;
