@@ -1,11 +1,13 @@
 import { Router } from "express";
 import { registerUserHandler } from "./user.controller";
+import validateResource from "../../middlewares/validateResources";
+import { CreateUserBody, createUserSchema } from "./user.schema";
 
 const router = Router();
 
 router.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.send("Get me route");
 });
 
-router.post("/", registerUserHandler);
+router.post("/", validateResource(createUserSchema), registerUserHandler);
 export default router;
