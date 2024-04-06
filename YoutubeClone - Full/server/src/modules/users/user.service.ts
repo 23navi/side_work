@@ -1,4 +1,4 @@
-import { UserModel } from "./user.model";
+import { User, UserModel } from "./user.model";
 import type { CreateUserBody } from "./user.schema";
 
 export const createUser = async (
@@ -6,3 +6,7 @@ export const createUser = async (
 ) => {
   return UserModel.create(user);
 };
+
+export async function findUserByEmail(email: User["email"]) {
+  return UserModel.findOne({ email });
+}
