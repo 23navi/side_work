@@ -26,7 +26,8 @@
     "nanoid": "^5.0.4",
     "pino": "^8.16.2",
     "zod": "^3.22.4",
-    "zod-express-middleware": "^1.4.0"
+    "zod-express-middleware": "^1.4.0",
+    "zod-validation-error": "^3.1.0"
   },
   "devDependencies": {
     "@types/busboy": "^1.5.3",

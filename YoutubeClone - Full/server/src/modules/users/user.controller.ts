@@ -2,6 +2,8 @@ import type { Request, Response } from "express";
 import type { CreateUserBody } from "./user.schema";
 import { createUser } from "./user.service";
 import { StatusCodes } from "http-status-codes";
+
+
 export const registerUserHandler = async (
   req: Request<{}, CreateUserBody>,
   res: Response
