@@ -1,0 +1,5 @@
+# In Windows
+python -m http.server --cgi <port>
+
+# In Linux or MacOS
+python3 -m http.server --cgi <port>

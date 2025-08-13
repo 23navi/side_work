@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<samlp:LogoutRequest 
+    Destination="{IDP-LOGOUT-URL}" 
+    ID="{UNIQUE-GENERATED-ID}" 
+    IssueInstant="2021-10-17T22:15:30.099Z" 
+    NotOnOrAfter="2021-10-18T22:01:30.099Z" 
+    Reason="SP Logout" 
+    Version="2.0" 
+    xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion" 
+    xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol">
+  <saml:Issuer>{SP-ENTITY-ID}</saml:Issuer>
+  <saml:NameID Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified">{ASSERTION-NAME-ID}</saml:NameID>
+  <samlp:SessionIndex>{REQUEST-UNIQUE-GENERATED-ID}</samlp:SessionIndex>
+</samlp:LogoutRequest>
